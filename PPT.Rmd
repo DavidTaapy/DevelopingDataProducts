@@ -1,0 +1,34 @@
+---
+title: "Project for Developing Data Products"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Purpose of Application
+The application is to be used to create scatterplot of 'Petal Length' to 'Sepal Length' for selected 'Species' in the Iris dataset.
+
+```{r}
+plot(0, type = "n", xlab = "Sepal Length", ylab = "Petal Length", xlim = c(0, 10), ylim =  c(0, 10))
+```
+
+## Input and Outputs of Application
+The application has checkboxes for the 3 species in the Iris dataset:  
+- Plot Setosa  
+- Plot Versicolor  
+- Plot Virginica  
+
+The output would be a scatterplot of the petal length against sepal length for the selected species.
+
+Different species will be plotted with dots of different colors.
+
+## Example Plot with Setosa and Virginica
+```{r}
+data <- iris[which(iris$Species == "setosa" | iris$Species == "virginica"), ]
+plot(data$Sepal.Length, data$Petal.Length, col = data$Species, xlab = "Sepal Length", ylab = "Petal Length")
+```
+
+## Thank you
+Thank you! Hope you will like my application!
